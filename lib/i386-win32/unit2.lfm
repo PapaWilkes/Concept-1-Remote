@@ -1,0 +1,72 @@
+object Form2: TForm2
+  Left = 309
+  Height = 130
+  Top = 164
+  Width = 214
+  BorderIcons = []
+  Caption = 'Setup Source Names'
+  ClientHeight = 130
+  ClientWidth = 214
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object SourceNames: TMemo
+    Left = 8
+    Height = 72
+    Top = 8
+    Width = 85
+    Alignment = taCenter
+    Color = clYellow
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      'Source A'
+      'Source B'
+      'Source C'
+      'Source D'
+    )
+    ParentFont = False
+    TabOrder = 0
+  end
+  object SBSourceMemoClose: TButton
+    Left = 8
+    Height = 34
+    Top = 88
+    Width = 197
+    Caption = 'Done'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = SBSourceMemoCloseClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object StaticText1: TStaticText
+    Left = 101
+    Height = 72
+    Top = 8
+    Width = 104
+    Alignment = taCenter
+    BorderStyle = sbsSingle
+    Caption = 'Four Sources. Concept 1 can show only 8 characters.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+end

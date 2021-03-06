@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\FPC\3.2.0\bin\i386-Win32\fpc.exe" Date="1355043128"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -WG -l -vewnhibq -FiE:\VolumeControlRevisited\backup\lib\i386-win32 -FuC:\lazarus\components\turbopower_ipro\units\i386-win32\win32 -FuC:\lazarus\components\RackCtls\lib\i386-win32 -FuC:\lazarus\components\EC_Controls\lib\i386-win32 -FuC:\lazarus\components\printers\lib\i386-win32\win32 -FuC:\lazarus\components\ideintf\units\i386-win32\win32 -FuC:\lazarus\components\LazSerial\lib\i386-win32 -FuC:\lazarus\components\lazcontrols\lib\i386-win32\win32 -FuC:\lazarus\components\cairocanvas\lib\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FuE:\VolumeControlRevisited\backup\ -FUE:\VolumeControlRevisited\backup\lib\i386-win32\ -FEE:\VolumeControlRevisited\backup\ -oE:\VolumeControlRevisited\backup\Concept1RC.exe -dUseCThreads -dLCL -dLCLwin32 project1.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>

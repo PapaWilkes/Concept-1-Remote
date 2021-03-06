@@ -1,0 +1,81 @@
+unit Unit1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, EditBtn, FileUtil;
+
+
+  { TForm1 }
+  Type
+
+  TForm1 = class(TForm)
+    BnFLoad: TButton;
+    BnFSave: TButton;
+    EdTest: TEdit;
+    FileNameEditTest: TFileNameEdit;
+    MOTest: TMemo;
+    STFileName: TStaticText;
+    procedure BnFLoadClick(Sender: TObject);
+    procedure BnFSaveClick(Sender: TObject);
+    Procedure LoadSourcesFileIntoMemo;
+    procedure STFileNameClick(Sender: TObject);
+  private
+
+  public
+
+  end;
+
+var
+  Form1: TForm1;
+  FName:String;
+
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.BnFSaveClick(Sender: TObject);
+begin
+   FName:= EdTest.Text;
+
+   try
+  MOTest.Lines.SaveToFile(FName);
+ except
+ ShowMessageFmt('Text file %s not found', [FName]);
+ end;
+end;
+
+procedure TForm1.BnFLoadClick(Sender: TObject);
+begin
+ LoadSourcesFileIntoMemo;
+end;
+
+
+procedure TForm1.LoadSourcesFileIntoMemo;
+var FSources: TextFile;
+ FName: string;
+ s: string;
+begin
+  FName:= EdTest.Text;
+    try
+  MOTest.Lines.LoadFromFile(FName);
+ except
+ ShowMessageFmt('Text file %s not found', [FName]);
+ end;
+end;
+
+procedure TForm1.STFileNameClick(Sender: TObject);
+begin
+
+end;
+
+
+
+
+end.
+
