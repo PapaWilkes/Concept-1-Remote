@@ -1,44 +1,20 @@
 object Form2: TForm2
-  Left = 309
-  Height = 130
-  Top = 164
-  Width = 214
+  Left = 833
+  Height = 257
+  Top = 128
+  Width = 171
   BorderIcons = []
-  Caption = 'Setup Source Names'
-  ClientHeight = 130
-  ClientWidth = 214
-  FormStyle = fsStayOnTop
+  Caption = 'Source Names & COM Port'
+  ClientHeight = 257
+  ClientWidth = 171
   OnCreate = FormCreate
-  Position = poMainFormCenter
+  Position = poScreenCenter
   LCLVersion = '2.0.12.0'
-  object SourceNames: TMemo
-    Left = 8
-    Height = 72
-    Top = 8
-    Width = 85
-    Alignment = taCenter
-    Color = clYellow
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    Font.Style = [fsBold]
-    Lines.Strings = (
-      'Source A'
-      'Source B'
-      'Source C'
-      'Source D'
-    )
-    ParentFont = False
-    TabOrder = 0
-  end
-  object SBSourceMemoClose: TButton
-    Left = 8
-    Height = 34
-    Top = 88
-    Width = 197
+  object SBSetupClose: TButton
+    Left = 15
+    Height = 26
+    Top = 132
+    Width = 140
     Caption = 'Done'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -47,18 +23,18 @@ object Form2: TForm2
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    OnClick = SBSourceMemoCloseClick
+    OnClick = SBSetupCloseClick
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
   end
-  object StaticText1: TStaticText
-    Left = 101
-    Height = 72
-    Top = 8
-    Width = 104
+  object StaticText2: TStaticText
+    Left = 16
+    Height = 24
+    Top = 172
+    Width = 137
     Alignment = taCenter
     BorderStyle = sbsSingle
-    Caption = 'Four Sources. Concept 1 can show only 8 characters.'
+    Caption = 'Change COM Port'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -13
@@ -67,6 +43,210 @@ object Form2: TForm2
     Font.Quality = fqDraft
     Font.Style = [fsBold]
     ParentFont = False
+    TabOrder = 1
+  end
+  object RBCom1: TRadioButton
+    Left = 20
+    Height = 20
+    Top = 204
+    Width = 56
+    Caption = 'COM1'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = RBCom1Click
+    ParentFont = False
+    TabOrder = 5
+  end
+  object RBCom2: TRadioButton
+    Left = 95
+    Height = 20
+    Top = 204
+    Width = 56
+    Caption = 'COM2'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = RBCom1Click
+    ParentFont = False
     TabOrder = 2
+  end
+  object RBCom3: TRadioButton
+    Left = 20
+    Height = 20
+    Top = 231
+    Width = 56
+    Caption = 'COM3'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = RBCom1Click
+    ParentFont = False
+    TabOrder = 3
+  end
+  object RBCom4: TRadioButton
+    Left = 95
+    Height = 20
+    Top = 231
+    Width = 56
+    Caption = 'COM4'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = RBCom1Click
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Edit1: TEdit
+    Left = 88
+    Height = 24
+    Top = 9
+    Width = 65
+    Alignment = taCenter
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    MaxLength = 8
+    ParentFont = False
+    TabOrder = 6
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 88
+    Height = 24
+    Top = 36
+    Width = 65
+    Alignment = taCenter
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    MaxLength = 8
+    ParentFont = False
+    TabOrder = 7
+    Text = 'Edit2'
+  end
+  object Edit3: TEdit
+    Left = 88
+    Height = 24
+    Top = 64
+    Width = 65
+    Alignment = taCenter
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    MaxLength = 8
+    ParentFont = False
+    TabOrder = 8
+    Text = 'Edit3'
+  end
+  object Edit4: TEdit
+    Left = 88
+    Height = 24
+    Top = 92
+    Width = 65
+    Alignment = taCenter
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    MaxLength = 8
+    ParentFont = False
+    TabOrder = 9
+    Text = 'Edit4'
+  end
+  object Label1: TLabel
+    Left = 15
+    Height = 16
+    Top = 12
+    Width = 59
+    Caption = 'Source A'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 15
+    Height = 16
+    Top = 39
+    Width = 57
+    Caption = 'Source B'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 15
+    Height = 16
+    Top = 67
+    Width = 57
+    Caption = 'Source C'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 15
+    Height = 16
+    Top = 95
+    Width = 58
+    Caption = 'Source D'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
   end
 end

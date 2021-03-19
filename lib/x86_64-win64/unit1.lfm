@@ -1,0 +1,207 @@
+object Form1: TForm1
+  Left = 226
+  Height = 695
+  Hint = 'APart Concept One Remote Control'
+  Top = 162
+  Width = 75
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  ActiveControl = ECVolSlider1
+  Anchors = []
+  BorderIcons = [biSystemMenu]
+  Caption = 'V'
+  ClientHeight = 695
+  ClientWidth = 75
+  Color = clBackground
+  Constraints.MaxWidth = 75
+  Constraints.MinWidth = 75
+  FormStyle = fsStayOnTop
+  OnActivate = FormActivate
+  OnClose = FormClose
+  ShowHint = True
+  LCLVersion = '2.0.12.0'
+  Scaled = False
+  object ECVolSlider1: TECSlider
+    AnchorSideTop.Control = Owner
+    Left = 0
+    Height = 674
+    Top = 0
+    Width = 75
+    Anchors = [akTop, akBottom]
+    BevelInner = bvRaised
+    BevelOuter = bvNone
+    BevelSpace = 1
+    BevelWidth = 2
+    Caption = 'Source'
+    Color = clForm
+    DiscreteChange = 1
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    GrooveBevelWidth = 3
+    GrooveColor = clSilver
+    GrooveTransparent = False
+    GrooveWidth = 3
+    Increment = 1
+    Indent = 8
+    Mode = eimDiscrete
+    Knob.Color = clSilver
+    Knob.Style = eosPanel
+    Knob.TickMarkCount = 3
+    Knob.TickMarkDesign = etd3DRaised
+    Knob.TickMarkSpacing = 1
+    Knob.Width = 22
+    PageSize = 10
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    PopupMenu = PMenuSources
+    Position = -60
+    ProgressColor = clYellow
+    ProgressColor2 = clNavy
+    ProgressStyle = epsGradient
+    RelativeScaleLength = -1
+    Reversed = True
+    Scale.DateTimeFormat = 'hh:nn:ss'
+    Scale.LogarithmBase = 10
+    Scale.Max = 0
+    Scale.Min = -80
+    Scale.TickAlign = etaInner
+    Scale.TickIndent = 3
+    Scale.TickLength = 12
+    Scale.TickLongValue = 10
+    Scale.TickMiddleValue = 5
+    Scale.TickShortValue = 1
+    ScaleFontOptions.FontSize = 7
+    ScaleFontOptions.FontStyles = [fsBold]
+    ScaleTickPos = etmTopLeft
+    ScaleValuePos = etmTopLeft
+    ShowHint = True
+    Style = eosPanel
+    TabOrder = 0
+    OnChange = ECVolSlider1Change
+    OnEnter = FormActivate
+    OnMouseDown = ECVolSlider1MouseDown
+    OnMouseUp = ECVolSlider1MouseUp
+  end
+  object SBSetup: TSpeedButton
+    AnchorSideTop.Control = ECVolSlider1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 41
+    Height = 20
+    Hint = 'Edit the source names of the Concept 1'#13#10'and choose the COM port.'
+    Top = 675
+    Width = 32
+    Anchors = [akTop, akBottom]
+    BorderSpacing.Top = 1
+    BorderSpacing.Bottom = 1
+    Constraints.MaxHeight = 20
+    Constraints.MinHeight = 20
+    Caption = 'Setup'
+    Color = clDefault
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -9
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqAntialiased
+    Font.Style = [fsBold]
+    Transparent = False
+    OnClick = SBSetupClick
+    ShowHint = True
+    ParentFont = False
+    ParentShowHint = False
+  end
+  object STSerialData: TStaticText
+    Left = 2
+    Height = 16
+    Top = 176
+    Width = 43
+    Caption = 'Data'
+    Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Terminal'
+    Font.Pitch = fpFixed
+    Font.Quality = fqCleartype
+    ParentFont = False
+    ShowAccelChar = False
+    TabOrder = 1
+    Visible = False
+  end
+  object ECSwitch1: TECSwitch
+    AnchorSideTop.Control = ECVolSlider1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 1
+    Height = 19
+    Hint = 'Put Concept 1 into standby.'
+    Top = 675
+    Width = 37
+    Anchors = [akTop, akBottom]
+    BorderSpacing.Top = 1
+    BorderSpacing.Bottom = 1
+    Constraints.MaxHeight = 20
+    GrooveCheckedClr = clYellow
+    Knob.Style = eosFinePanel
+    Knob.TickMarkCount = 3
+    Knob.TickMarkDesign = etd3DRaised
+    Knob.TickMarkSpacing = 1
+    KnobIndent = 2
+    ParentShowHint = False
+    ShowHint = True
+    SwitchHeight = 22
+    SwitchWidth = 37
+    TabOrder = 2
+    OnChange = ECSwitch1Change
+  end
+  object LazSerial1: TLazSerial
+    Active = False
+    BaudRate = br_19200
+    DataBits = db8bits
+    Parity = pNone
+    FlowControl = fcNone
+    StopBits = sbOne
+    Device = 'COM1'
+    RcvLineCRLF = False
+    OnRxData = LazSerial1RxData
+    Left = 8
+    Top = 64
+  end
+  object PMenuSources: TPopupMenu
+    Left = 8
+    Top = 224
+    object MenuItem1: TMenuItem
+      Tag = 1
+      Caption = 'Source A'
+      ShortCut = 16449
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Tag = 2
+      Caption = 'Source B'
+      ShortCut = 16450
+      OnClick = MenuItem1Click
+    end
+    object MenuItem3: TMenuItem
+      Tag = 3
+      Caption = 'SourceC'
+      ShortCut = 16451
+      OnClick = MenuItem1Click
+    end
+    object MenuItem4: TMenuItem
+      Tag = 4
+      Caption = 'Source D'
+      ShortCut = 16452
+      OnClick = MenuItem1Click
+    end
+  end
+end

@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1, LazSerialPort, Unit2, RackCtlsPkg;
+  Forms, Unit1, LazSerialPort, Unit2;
 
 {$R *.res}
 
